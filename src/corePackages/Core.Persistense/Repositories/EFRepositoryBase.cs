@@ -21,9 +21,9 @@ public class EFRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>
     }
 
     public async Task<IPaginate<TEntity>> GetListAsync(
-        Expression<Func<TEntity, bool>> predicate = null,
-        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null,
+        Expression<Func<TEntity, bool>>? predicate = null,
+        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+        Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
         int index = 0,
         int size = 10,
         bool enableTracking = true,

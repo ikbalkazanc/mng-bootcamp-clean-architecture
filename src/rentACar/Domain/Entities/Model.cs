@@ -4,9 +4,6 @@ namespace Domain.Entities;
 
 public class Model : Entity
 {
-    public Model()
-    {
-    }
 
     public string Name { get; set; }
     public double DailyPrice { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace Core.Persistense.Repositories;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Core.Persistense.Repositories;
 
 public class Entity
 {
@@ -10,6 +12,6 @@ public class Entity
     {
         Id = id;
     }
-
+    [Key]
     public int Id { get; set; }
 }

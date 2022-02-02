@@ -15,6 +15,10 @@ public class BaseDbContext : DbContext
 
     public DbSet<Brand> Brands { get; set; }
     public DbSet<Model> Models { get; set; }
+    public DbSet<Car> Cars { get; set; }
+    public DbSet<Color> Colors { get; set; }
+    public DbSet<Transmission> Transmissions { get; set; }
+    public DbSet<Fuel> Fuels { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -36,10 +40,43 @@ public class BaseDbContext : DbContext
             b.Property(p => p.Name).HasColumnName("Name");
             b.HasMany(p => p.Models);
         });
+        modelBuilder.Entity<Color>(b =>
+        {
+            b.ToTable("Colors").HasKey(k => k.Id);
+            b.Property(p => p.Id).HasColumnName("Id");
+            b.Property(p => p.Name).HasColumnName("Name");
+            b.HasMany(p => p.Cars);
+        });
+        modelBuilder.Entity<Fuel>(b =>
+        {
+            b.ToTable("Fuels").HasKey(k => k.Id);
+            b.Property(p => p.Id).HasColumnName("Id");
+            b.Property(p => p.Name).HasColumnName("Name");
+            b.HasMany(p => p.Models);
+        });
+        modelBuilder.Entity<Transmission>(b =>
+        {
+            b.ToTable("Transmissions").HasKey(k => k.Id);
+            b.Property(p => p.Id).HasColumnName("Id");
+            b.Property(p => p.Name).HasColumnName("Name");
+            b.HasMany(p => p.Models);
+        });
+        modelBuilder.Entity<Car>(b =>
+        {
+            b.ToTable("Cars").HasKey(k => k.Id);
+            b.Property(p => p.Id).HasColumnName("Id");
+            b.Property(p => p.ModelYear).HasColumnName("ModelYear");
+            b.Property(p => p.CatState).HasColumnName("State");
+            b.Property(p => p.Plate).HasColumnName("Plate");
+            b.Property(p => p.ColorId).HasColumnName("ColorId");
+            b.HasOne(p => p.Color);
+            b.Property(p => p.ModelId).HasColumnName("ModelId");
+            b.HasOne(p => p.Model);
+        });
 
         modelBuilder.Entity<Model>(b =>
         {
-            b.ToTable("Brands").HasKey(k => k.Id);
+            b.ToTable("Models").HasKey(k => k.Id);
             b.Property(p => p.Id).HasColumnName("Id");
             b.Property(p => p.Name).HasColumnName("Name");
             b.Property(p => p.ImageUrl).HasColumnName("ImageUrl");

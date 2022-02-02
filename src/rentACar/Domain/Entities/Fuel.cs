@@ -1,6 +1,8 @@
-﻿namespace Domain.Entities;
+﻿using Core.Persistense.Repositories;
 
-public class Fuel
+namespace Domain.Entities;
+
+public class Fuel : Entity
 {
     public Fuel()
     {
