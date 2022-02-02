@@ -36,5 +36,17 @@ public class BaseDbContext : DbContext
             b.Property(p => p.Name).HasColumnName("Name");
             b.HasMany(p => p.Models);
         });
+
+        modelBuilder.Entity<Model>(b =>
+        {
+            b.ToTable("Brands").HasKey(k => k.Id);
+            b.Property(p => p.Id).HasColumnName("Id");
+            b.Property(p => p.Name).HasColumnName("Name");
+            b.Property(p => p.ImageUrl).HasColumnName("ImageUrl");
+            b.Property(p => p.DailyPrice).HasColumnName("DailyPrice");
+            b.HasOne(x => x.Transmission);
+            b.HasOne(x => x.Fuel);
+            b.HasOne(x => x.Brand);
+        });
     }
 }

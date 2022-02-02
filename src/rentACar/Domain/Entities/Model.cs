@@ -9,7 +9,7 @@ public class Model : Entity
     }
 
     public string Name { get; set; }
-    public double BailyPrice { get; set; }
+    public double DailyPrice { get; set; }
     public int ImageUrl { get; set; }
     public int TransmissionId { get; set; }
     public virtual Transmission Transmission { get; set; }

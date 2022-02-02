@@ -10,7 +10,7 @@ namespace WebAPI.Controllers
     public class BrandsController : BaseController
     {
         [HttpPost("add")]
-        public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand)
+        public async Task<IActionResult> Add([FromBody] CreateModelCommand createBrandCommand)
         {
             var result = await Mediator.Send(createBrandCommand);
             return Created("", result);

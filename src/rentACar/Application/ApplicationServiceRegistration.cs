@@ -13,6 +13,7 @@ public static class ApplicationServiceRegistration
         services.AddMediatR(Assembly.GetExecutingAssembly());
 
 
+        services.AddScoped<ModelBusinessRules>();
         services.AddScoped<BrandBusinessRules>();
 
         return services;

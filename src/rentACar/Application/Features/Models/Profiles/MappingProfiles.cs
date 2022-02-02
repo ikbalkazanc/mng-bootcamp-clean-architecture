@@ -9,11 +9,11 @@ using Domain.Entities;
 
 namespace Application.Features.Brands.Profiles
 {
-    internal class MappingProfiles : Profile
+    internal class ModelMappingProfiles : Profile
     {
-        public MappingProfiles()
+        public ModelMappingProfiles()
         {
-            CreateMap<Brand, CreateModelCommand>().ReverseMap();
+            CreateMap<Model, CreateModelCommand>().ReverseMap();
         }
     }
 }
