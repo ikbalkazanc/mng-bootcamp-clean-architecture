@@ -1,10 +1,11 @@
 ﻿using Application.Features.Brands.Rules;
+using Application.Features.Models.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
 
-namespace Application.Features.Brands.Commands;
+namespace Application.Features.Models.Commands;
 
 public class CreateModelCommand : IRequest<Model>
 {

@@ -1,7 +1,7 @@
 ﻿using Application.Services.Repositories;
 using Core.CrossCuttingConcerns.Exceptions;
 
-namespace Application.Features.Brands.Rules;
+namespace Application.Features.Models.Rules;
 
 public class ModelBusinessRules
 {
