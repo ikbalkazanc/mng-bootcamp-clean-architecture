@@ -26,7 +26,7 @@ public class CreateBrandCommand : IRequest<Brand>
 
         public async Task<Brand> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
         {
-            await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInserted(request.Name);
+            await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInsertedAndUpdated(request.Name);
 
             var mappedBrand = _mapper.Map<Brand>(request);
 

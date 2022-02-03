@@ -8,6 +8,11 @@ public class Transmission : Entity
     {
         Models = new HashSet<Model>();
     }
+    public Transmission(int id, string name) : this()
+    {
+        Id = id;
+        Name = name;
+    }
     public string Name { get; set; }
     public ICollection<Model> Models { get; set; }
 }

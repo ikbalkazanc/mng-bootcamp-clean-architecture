@@ -63,7 +63,7 @@ public class EFRepositoryBase<TEntity, TContext> : IAsyncRepository<TEntity>
 
     public async Task DeleteAsync(TEntity entity)
     {
-        Context.Entry(entity).State = EntityState.Added;
+        Context.Entry(entity).State = EntityState.Deleted;
         await Context.SaveChangesAsync();
     }
 }

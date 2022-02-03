@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Features.Brands.Commands;
+using Application.Features.Brands.Dtos;
 using Application.Features.Models.Commands;
 using AutoMapper;
 using Domain.Entities;
@@ -15,6 +16,8 @@ namespace Application.Features.Brands.Profiles
         public MappingProfiles()
         {
             CreateMap<Brand, CreateModelCommand>().ReverseMap();
+            CreateMap<Brand, UpdateBrandCommand>().ReverseMap();
+            CreateMap<Brand, BrandDto>().ReverseMap();
         }
     }
 }

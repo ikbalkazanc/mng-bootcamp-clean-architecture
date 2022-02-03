@@ -9,8 +9,10 @@ public class Brand : Entity
         Models = new HashSet<Model>();
     }
 
-    public Brand(int id) : this()
+    public Brand(int id, string name) : this()
     {
+        Id = id;
+        Name = name;
     }
 
     public string Name { get; set; }
