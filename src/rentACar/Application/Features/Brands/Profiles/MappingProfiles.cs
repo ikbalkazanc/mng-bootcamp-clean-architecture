@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.Features.Brands.Commands;
 using Application.Features.Brands.Dtos;
+using Application.Features.Brands.Models;
 using Application.Features.Models.Commands;
 using AutoMapper;
+using Core.Persistense.Paging;
 using Domain.Entities;
 
 namespace Application.Features.Brands.Profiles
@@ -15,9 +17,12 @@ namespace Application.Features.Brands.Profiles
     {
         public MappingProfiles()
         {
-            CreateMap<Brand, CreateModelCommand>().ReverseMap();
+            CreateMap<Brand, CreateBrandCommand>().ReverseMap();
             CreateMap<Brand, UpdateBrandCommand>().ReverseMap();
             CreateMap<Brand, BrandDto>().ReverseMap();
+
+            CreateMap<Brand, BrandListDto>().ReverseMap();
+            CreateMap<BrandListModel, IPaginate<Brand>>().ReverseMap();
         }
     }
 }

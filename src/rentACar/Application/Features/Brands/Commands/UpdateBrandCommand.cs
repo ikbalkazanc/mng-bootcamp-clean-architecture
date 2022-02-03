@@ -35,9 +35,9 @@ public class UpdateBrandCommand : IRequest<BrandDto>
 
             await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInsertedAndUpdated(request.Name);
 
-            var newBrand = _mapper.Map<Brand>(request);
+            _mapper.Map(request, brand);
 
-            await _brandRepository.UpdateAync(newBrand);
+            await _brandRepository.UpdateAync(brand);
 
             var dto = _mapper.Map<BrandDto>(brand);
 

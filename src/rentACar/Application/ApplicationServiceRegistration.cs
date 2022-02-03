@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Application.Features.Brands.Rules;
+using Application.Features.Fuel.Rules;
 using Application.Features.Models.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ public static class ApplicationServiceRegistration
 
         services.AddScoped<ModelBusinessRules>();
         services.AddScoped<BrandBusinessRules>();
+        services.AddScoped<FuelBusinessRules>();
 
         return services;
     }
