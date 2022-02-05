@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Application.Features.Brands.Rules;
+using Application.Features.Colors.Rules;
 using Application.Features.Fuel.Rules;
 using Application.Features.Models.Rules;
 using MediatR;
@@ -18,6 +19,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ModelBusinessRules>();
         services.AddScoped<BrandBusinessRules>();
         services.AddScoped<FuelBusinessRules>();
+        services.AddScoped<ColorBusinessRules>();
 
         return services;
     }

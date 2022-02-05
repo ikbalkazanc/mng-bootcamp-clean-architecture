@@ -19,6 +19,10 @@
     <Folder Include="Features\Brands\Models\" />
     <Folder Include="Features\Brands\Tests\" />
     <Folder Include="Features\Brands\Queries\" />
+    <Folder Include="Features\Colors\Models\" />
+    <Folder Include="Features\Colors\Profiles\" />
+    <Folder Include="Features\Colors\Queries\" />
+    <Folder Include="Features\Colors\Rules\" />
     <Folder Include="Features\Fuel\Dtos\" />
     <Folder Include="Features\Fuel\Test\" />
     <Folder Include="Features\Fuel\Profiles\" />
